@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::auth();
+
+Route::get('/', ['as' => 'chat', 'uses' => 'MessageController@show']);
+
+Route::get('/chats', ['as' => 'chats', 'uses' => 'MessageController@showall']);
