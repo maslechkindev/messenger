@@ -1,0 +1,20 @@
+.chat-panel-block {
+    height:400px;
+}
+
+#message {
+    height:100px;
+}
+
+.message-body-admin {
+    background: #fffdec;
+}
+
+.message-body-user {
+    background: #eeffea;
+}
+
+.message-body-new {
+    background: #fff9c4;
+    border: 2px solid #ffc491;
+}
