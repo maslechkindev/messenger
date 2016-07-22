@@ -15,10 +15,8 @@ Route::auth();
 
 Route::get('/', ['as' => 'chat', 'uses' => 'MessageController@show']);
 
+Route::get('/test', ['as' => 'test', 'uses' => 'MessageController@test']);
+
 Route::get('/chats', ['as' => 'chats', 'uses' => 'MessageController@showall']);
 Route::post('/send', ['as' => 'send', 'uses' => 'MessageController@send']);
-Route::get('/checkmessage', ['as' => 'checkmessage', 'uses' => 'MessageController@checkmessage']);
-Route::get('/getmessage', ['as' => 'getmessage', 'uses' => 'MessageController@getmessage']);
-Route::get('/updatemessage', ['as' => 'updatemessage', 'uses' => 'MessageController@updatemessage']);
-Route::get('/checkmessage', ['as' => 'checkmessage', 'uses' => 'MessageController@checkmessage']);
-Route::get('/checkmessage', ['as' => 'checkmessage', 'uses' => 'MessageController@checkmessage']);
+Route::post('/updatechat', ['as' => 'updatechat', 'uses' => 'MessageController@updatechat']);

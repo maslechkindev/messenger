@@ -9,7 +9,7 @@
                     <div class="panel-body">
                         <div class="col-md-12">
                             <div class="panel panel-default chat-panel-block">
-                                <div class="panel-body">
+                                <div class="panel-body chat-panel-body" id="chat-panel-body" >
                                     @foreach ($messages as $message)
                                         @include('message._part._message')
                                     @endforeach

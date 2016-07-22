@@ -22,6 +22,15 @@ class Message extends Model
         $request->where('messages.deleted', '=', '0');
     }
 
+    public function scopeNewmessage($request, $id_last_message)
+    {
+        $request->where('messages.id', '>', $id_last_message)
+            ->where('messages.is_new', '=', 1);
+    }
+
+
+
+
     public function scopeDeleted($request)
     {
         $request->where('messages.deleted', '=', '1');

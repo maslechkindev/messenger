@@ -1,9 +1,11 @@
 .chat-panel-block {
-    height:400px;
+    height:315px;
 }
 
-#message {
-    height:100px;
+.chat-panel-body {
+    overflow-y: scroll;
+    height: 300px;
+    margin: 5px;
 }
 
 .message-body-admin {
