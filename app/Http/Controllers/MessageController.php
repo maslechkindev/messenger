@@ -21,9 +21,22 @@ class MessageController extends Controller
         $this->middleware('auth');
     }
 
-    public function show(MessageBl $messageRequest, UserBl $userRequest)
+    public function show(MessageBl $messageRequest, UserBl $userRequest, $id_user_to = null)
     {
-        return view('/message/show', $messageRequest->showUserMessages(Auth::id(), $userRequest->getAdminId()));
+        if(Auth::id() != $userRequest->getAdminId()){
+            return view('/message/show', $messageRequest->showUserMessages(Auth::id(), $userRequest->getAdminId())) ;
+        } else {
+            $user_to = $id_user_to == null ? null : $id_user_to;
+            $data = $messageRequest->showUserMessages(Auth::id(), $user_to);
+            $data['users'] = $userRequest->getUsersList();
+            $data['type'] = 'admin';
+            return view('/message/showadmin', $data) ;
+        }
+    }
+
+    public function showajax(Request $request, MessageBl $messageRequest)
+    {
+        return $messageRequest->showAdminMessages($request->id_user_to);
     }
 
     public function send(Request $request, MessageBl $messageRequest)

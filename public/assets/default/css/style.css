@@ -8,6 +8,12 @@
     margin: 5px;
 }
 
+.users-block-body {
+    overflow-y: scroll;
+    height: 450px;
+    margin: 5px;
+}
+
 .message-body-admin {
     background: #fffdec;
 }
@@ -19,4 +25,68 @@
 .message-body-new {
     background: #fff9c4;
     border: 2px solid #ffc491;
+}
+
+.user-active a.user-link {
+    font-weight: bold;
+    color: #2c577b;
+    background: #fbe755;
+}
+
+.user-new a.user-link {
+    font-weight: bold;
+    color: #ea501e;;
+}
+
+.user-deleted a.user-link {
+    color: #b1b1b1;
+}
+
+.user-delete,
+.user-update{
+    border: 2px solid #383838;
+    width: 15px;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 9px;
+    padding-left: 3px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0px 10px 0px 0;
+}
+
+.user-count-messages {
+    font-size: 12px;
+    color: #ff1c00;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.user-all{
+    margin-left:30px;
+}
+
+.user-link{
+    padding: 3px 7px;
+    text-decoration: none;
+}
+
+.user-link:hover,
+.user-link:active{
+    text-decoration: none !important;
+    background: #fff1aa;
+    font-weight:bold;
+}
+
+.user-delete,
+.user-link,
+.user-update{
+    cursor: pointer;
+}
+.user-delete:hover,
+.user-delete:active,
+.user-update:hover,
+.user-update:active {
+    background: #fff1aa;
 }

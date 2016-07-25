@@ -20,3 +20,7 @@ Route::get('/test', ['as' => 'test', 'uses' => 'MessageController@test']);
 Route::get('/chats', ['as' => 'chats', 'uses' => 'MessageController@showall']);
 Route::post('/send', ['as' => 'send', 'uses' => 'MessageController@send']);
 Route::post('/updatechat', ['as' => 'updatechat', 'uses' => 'MessageController@updatechat']);
+Route::post('/showajax', ['as' => 'showajax', 'uses' => 'MessageController@showajax']);
+Route::post('/userdelete', ['as' => 'userdelete', 'uses' => 'UserController@delete']);
+Route::post('/userupdate', ['as' => 'userupdate', 'uses' => 'UserController@update']);
+Route::post('/usersshow', ['as' => 'usersshow', 'uses' => 'UserController@show']);

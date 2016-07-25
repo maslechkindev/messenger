@@ -10,7 +10,8 @@
         @endif
             ">
         <div class="panel-body">
-            {{$message->message}}
+            @if(empty($id_user_to)) <span class="message-delete">x</span> @endif
+                {{$message->message}}
         </div>
     </div>
 </div>
