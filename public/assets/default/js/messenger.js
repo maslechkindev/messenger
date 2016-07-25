@@ -33,4 +33,16 @@ function checkUser(user){
         return false;
 }
 
+function userClearHistory(user){
+     //chat.userClearHistory($(user).data('user-to'));
+    $.ajax({
+        type: "POST",
+        url: '/historydelete',
+        data: '&id_user_to='+$(user).data('user-to'),
+    });
+    // $('.user-link').parent().removeClass('user-active');
+    // $(user).parent().addClass('user-active');
+}
+
+
 

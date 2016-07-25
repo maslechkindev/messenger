@@ -51,7 +51,12 @@ class MessageController extends Controller
         if ($request->isMethod('post')) {
             return $messageRequest->getNewMessages($request);
         }
+    }
 
+    public function historydelete(Request $request, MessageBl $messageRequest){
+        if ($request->isMethod('post')) {
+            return $messageRequest->deleteMessages($request);
+        }
     }
 }
 

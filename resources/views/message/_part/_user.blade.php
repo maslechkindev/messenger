@@ -1,4 +1,5 @@
 <div class="col-md-12 @if($user->deleted == 1) user-deleted @endif">
+    <span class="user-clear-history" data-user-to="{{$user->id}}" onclick="userClearHistory(this);">c</span>
     <span class="@if($user->deleted == 1) user-update @else user-delete @endif" data-user-to="{{$user->id}}"
           onclick="@if($user->deleted == 1) userUpdate(this); @else userDelete(this); @endif">
         @if($user->deleted == 1) u @else x @endif

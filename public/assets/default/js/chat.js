@@ -8,6 +8,7 @@ function Chat () {
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
     this.getUsers = getUsers;
+    this.userClearHistory = userClearHistory;
 }
 
 function getMessage() {
@@ -162,12 +163,19 @@ function createUserBlock(user){
     actionBl = user.deleted == 1 ? 'u' : 'x';
     actionJsBl = user.deleted == 1 ? "userUpdate(this)" : "userDelete(this)";
     actionJsUsBl = "checkUser(this); return false;";
+    actionJsDelBl = "userClearHistory(this); return false;";
     countMessages = user.message_count > 0 ? '('+user.message_count+')' : '';
 
     usrs += '<div class="col-md-12 ' + clMainBl + '" >';
     usrs +=     '<span class="' + clActionBl + '" data-user-to="'+user.id+'" onclick="'+actionJsBl+'">'+actionBl+'</span>';
+    usrs +=     '<span class="user-clear-history"  data-user-to="'+user.id+'" onclick="'+actionJsDelBl+'">c</span>';
     usrs +=     '<a class="user-link" href="/" onclick="'+actionJsUsBl+'" data-user-to="' + user.id + '">'+user.name+'</a>';
     usrs +=     '<span class="user-count-messages" data-user-to="'+user.id+'">'+countMessages+'</span>';
     usrs += '</div>';
     return usrs;
+}
+
+function userClearHistory(userto){
+    console.log('here');
+
 }

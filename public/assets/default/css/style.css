@@ -43,7 +43,8 @@
 }
 
 .user-delete,
-.user-update{
+.user-update,
+.user-clear-history{
     border: 2px solid #383838;
     width: 15px;
     font-weight: bold;
@@ -81,12 +82,15 @@
 
 .user-delete,
 .user-link,
-.user-update{
+.user-update,
+.user-clear-history{
     cursor: pointer;
 }
 .user-delete:hover,
 .user-delete:active,
 .user-update:hover,
-.user-update:active {
+.user-update:active,
+.user-clear-history:hover,
+.user-clear-history:active {
     background: #fff1aa;
 }

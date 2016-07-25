@@ -66,4 +66,11 @@ class MessageBl extends MainBl
             ->get()
             ->toJson();
     }
+
+    function deleteMessages($data)
+    {
+       return Message::where('messages.id_sender', '=', $data->id_user_to, 'or')
+            ->orWhere('messages.id_user_to', '=', $data->id_user_to)
+            ->update(['deleted' => 1]);
+    }
 }

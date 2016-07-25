@@ -24,3 +24,4 @@ Route::post('/showajax', ['as' => 'showajax', 'uses' => 'MessageController@showa
 Route::post('/userdelete', ['as' => 'userdelete', 'uses' => 'UserController@delete']);
 Route::post('/userupdate', ['as' => 'userupdate', 'uses' => 'UserController@update']);
 Route::post('/usersshow', ['as' => 'usersshow', 'uses' => 'UserController@show']);
+Route::post('/historydelete', ['as' => 'historydelete', 'uses' => 'MessageController@historydelete']);
